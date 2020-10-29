@@ -16,7 +16,9 @@
     "npm": "6.14.8"
   },
   "private": true,
-  "dependencies": {
+  "dependencies": {    
+    "express":"*",
+    "body-parser":"*",
     "@angular/cli": "^10.2.0",
     "@angular/compiler-cli": "^10.2.1",
     "@angular/animations": "~10.2.0",
