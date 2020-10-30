@@ -34,7 +34,7 @@ export class CtscanComponent implements OnInit {
     this.progress = 1;
     uploadImage.append('name', this.name);
     uploadImage.append('image', this.image, this.image.name);
-    this.http.post("https://covidreisparbe.herokuapp.com/image/", uploadImage, {
+    this.http.post("https://covidreisparbe.herokuapp.com/route/image/", uploadImage, {
       reportProgress: true,
       observe: "events"
     }).pipe(
