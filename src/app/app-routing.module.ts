@@ -4,8 +4,8 @@ import { CtscanComponent } from './ctscan/ctscan.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:'images', component:CtscanComponent},
-  {path: "", component:HomeComponent}
+  {path:'', component:CtscanComponent},
+  {path: "images", component:HomeComponent}
 ];
 
 @NgModule({
