@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { map, catchError } from "rxjs/operators"
 import { throwError } from "rxjs";
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-ctscan',
@@ -13,11 +14,14 @@ export class CtscanComponent implements OnInit {
   name: string;
   image: File;
   progress: number;
-  message:string;
+  message: string;
+
+  imagearray = { id: -1, name: 'name', image: 'image', prediction: 'Null' };
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit(): void {
   }
@@ -34,18 +38,17 @@ export class CtscanComponent implements OnInit {
     this.progress = 1;
     uploadImage.append('name', this.name);
     uploadImage.append('image', this.image, this.image.name);
-    this.http.post("https://covidreisparbe.herokuapp.com/route/image/", uploadImage, {
-      reportProgress: true,
-      observe: "events"
-    }).pipe(
+    this.api.postImage(uploadImage).pipe(
       map((event: any) => {
         if (event.type == HttpEventType.UploadProgress) {
           this.progress = Math.round((100 / event.total) * event.loaded);
-          if (this.progress === 100){
-            this.message = "Upload Completed"
+          if (this.progress === 100) {
+            this.message = "Upload Completed"            
+            
           }
         } else if (event.type == HttpEventType.Response) {
           this.progress = null;
+          this.getPred()
         }
       }),
       catchError((err: any) => {
@@ -56,4 +59,18 @@ export class CtscanComponent implements OnInit {
     ).toPromise();
 
   }
+  getPred(){
+    this.api.getImagedata().subscribe(
+      data=>{
+        this.imagearray =  data;
+        console.log(this.imagearray, " images");        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    )
+  }
+
+ 
 }
