@@ -17,36 +17,26 @@ export class CtscanComponent implements OnInit {
   message: string;
 
   imagearray = { id: -1, name: '', image: File, prediction: '' };
-
-
-
-
-
   constructor(private api: ApiService) {
   }
-
   ngOnInit(): void {
   }
   onTextchange(event: any) {
     this.name = event.target.value;
   }
-
   onImagechange(event: any) {
     this.image = event.target.files[0];
   }
-
-
-
   
   getPred() {
     this.api.getImagedata().subscribe(
-      data=>{
+      data => {
         this.imagearray = data[0];
-        
+
       },
-      error=>{
+      error => {
         console.log(error);
-        
+
       }
     )
   }
@@ -62,14 +52,14 @@ export class CtscanComponent implements OnInit {
         if (event.type == HttpEventType.UploadProgress) {
           this.progress = Math.round((100 / event.total) * event.loaded);
           if (this.progress === 100) {
-            this.message = "Upload Completed"            
-            
+            this.message = "Upload Completed"
+
           }
         } else if (event.type == HttpEventType.Response) {
           this.progress = null;
           this.getPred()
-          console.log(this.imagearray,  ' called func');
-          
+          console.log(this.imagearray, ' called func');
+
         }
       }),
       catchError((err: any) => {
@@ -80,5 +70,5 @@ export class CtscanComponent implements OnInit {
     ).toPromise();
 
   }
- 
+
 }
