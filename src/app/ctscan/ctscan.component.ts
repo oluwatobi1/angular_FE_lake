@@ -16,7 +16,9 @@ export class CtscanComponent implements OnInit {
   progress: number;
   message: string;
 
-  imagearray = { id: -1, name: 'name', image: 'image', prediction: 'Null' };
+  imagearray = { id: -1, name: '', image: File, prediction: '' };
+
+
 
 
 
@@ -32,6 +34,23 @@ export class CtscanComponent implements OnInit {
   onImagechange(event: any) {
     this.image = event.target.files[0];
   }
+
+
+
+  
+  getPred() {
+    this.api.getImagedata().subscribe(
+      data=>{
+        this.imagearray = data[0];
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    )
+  }
+
 
   newImage() {
     const uploadImage = new FormData;
@@ -49,6 +68,8 @@ export class CtscanComponent implements OnInit {
         } else if (event.type == HttpEventType.Response) {
           this.progress = null;
           this.getPred()
+          console.log(this.imagearray,  ' called func');
+          
         }
       }),
       catchError((err: any) => {
@@ -59,18 +80,5 @@ export class CtscanComponent implements OnInit {
     ).toPromise();
 
   }
-  getPred(){
-    this.api.getImagedata().subscribe(
-      data=>{
-        this.imagearray =  data;
-        console.log(this.imagearray, " images");        
-      },
-      error=>{
-        console.log(error);
-        
-      }
-    )
-  }
-
  
 }
