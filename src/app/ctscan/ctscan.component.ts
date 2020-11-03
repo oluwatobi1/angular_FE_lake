@@ -17,17 +17,27 @@ export class CtscanComponent implements OnInit {
   message: string;
 
   imagearray = { id: -1, name: '', image: File, prediction: '' };
+
+
+
+
+
   constructor(private api: ApiService) {
   }
+
   ngOnInit(): void {
   }
   onTextchange(event: any) {
     this.name = event.target.value;
   }
+
   onImagechange(event: any) {
     this.image = event.target.files[0];
   }
-  
+
+
+
+
   getPred() {
     this.api.getImagedata().subscribe(
       data => {
