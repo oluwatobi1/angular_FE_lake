@@ -18,7 +18,7 @@ export class CtscanComponent implements OnInit {
 
   imagearray = { id: -1, name: '', image: File, prediction: '' };
 
-
+  imgURL: any;
 
 
 
@@ -33,7 +33,16 @@ export class CtscanComponent implements OnInit {
 
   onImagechange(event: any) {
     this.image = event.target.files[0];
+    this.preview_image(this.image)
   }
+  preview_image(files) {
+      
+    var reader = new FileReader();
+    reader.readAsDataURL(files); 
+    reader.onload = (_event) => { 
+    this.imgURL = reader.result; 
+    }}
+ 
 
 
 
