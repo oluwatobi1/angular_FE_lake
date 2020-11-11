@@ -18,6 +18,9 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { DatasourceComponent } from './datasource/datasource.component';
 import { ProjectoverviewComponent } from './projectoverview/projectoverview.component';
 import { TeamMembersComponent } from './team-members/team-members.component';
+import { AnalyticsCorrelationComponent } from './analytics-correlation/analytics-correlation.component';
+import { AnalyticsStatisticsComponent } from './analytics-statistics/analytics-statistics.component';
+import { AnalyticsForecastingComponent } from './analytics-forecasting/analytics-forecasting.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { TeamMembersComponent } from './team-members/team-members.component';
     AnalyticsComponent,
     DatasourceComponent,
     ProjectoverviewComponent,
-    TeamMembersComponent
+    TeamMembersComponent,
+    AnalyticsCorrelationComponent,
+    AnalyticsStatisticsComponent,
+    AnalyticsForecastingComponent
   ],
   imports: [
     BrowserModule,
