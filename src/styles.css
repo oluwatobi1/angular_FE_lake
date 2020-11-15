@@ -52,11 +52,6 @@ img{
     margin: 0%;
     justify-self: center;
 }
-code, pre{
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-}
 .navbar .navbar-toggler{
     border: none;
     padding: 0%;
@@ -69,8 +64,18 @@ code, pre{
     padding: 0%;
     margin: 0%;
 }
-
-
+.navbar .dropdown .dropdown-item:active{
+    background-color:transparent;
+}
+.navbar .dropdown .dropdown-item{
+    background-color:transparent;
+}
+.embedded-file{
+    width: 100%;
+}
+.wrapper{
+    padding: 0em 4em;
+}
 /* Navbar Stylings */
 .navbar{
     background-color: var(--primary-color) ;
@@ -116,9 +121,12 @@ code, pre{
 }
 .navbar .dropdown:hover .dropdown-menu {
     display: block;
-    color: red;
+    margin-top: 0%;
+    padding-top: 0%;
 }
-
+.navbar .dropdown:hover{
+    display: block;
+}
 .navbar-nav a:hover{
     border-bottom: 1.5px solid var(--link-color);
 }
@@ -126,6 +134,7 @@ code, pre{
 .navbar-nav .nav-item .active{
     border-bottom: 1.5px solid var(--link-color);
 }
+
 
 /* mainContent Section */
 .mainContent{
@@ -302,29 +311,61 @@ code, pre{
 }
 
 /* Analytics Page */
-.analytics-main{
+/* Forecasting */
+.analytics-forecasting{
     background-color: var(--body-bg);
     flex-direction: column;  
-    margin: 5px 0px 20px 0px;  
+    align-items: flex-start;
+    margin: 1em 0px 4em 0px;  
 }
-.analytics-main h1{
+.analytics-forecasting h1{
     margin: 10px 0 0px 0px;
     font-size: 2em;
     font-weight: bold;
-}
-.analytics-main p{
-    margin: 10px 0 0px 0px;
-    font-weight: 600;
-    font-size: 1.25em;
-}
-.analytics-main .card{
-    width: 100%;
-    min-height: 20vh;
+    align-self: center;
 }
 
-.analytics-main .card img{
-    width: 20%;
+.analytics-forecasting .forecasting-summary p{
+    margin: 10px 0 0px 0px;
+    padding: 0%;
+    font-weight: 600;
+    font-size: 1.25em;
+    text-align: left;
 }
+.analytics-forecasting .forecasting-summary li{
+    margin: 0px 0 0px 1em;
+    /* padding-left: 1em; */
+    font-weight: 600;
+    font-size: 1em;
+}
+.analytics-forecasting .forecasting-countries{
+    margin-top: 2em;
+}
+.analytics-forecasting .forecasting-countries h5{
+    margin: 0.75em 0em 0em 0em;
+    padding: 0%;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: rgb(240, 173, 48);
+}
+.analytics-forecasting .forecasting-countries small{
+    padding: 0em 0em 10em 0em;
+    /* padding: 0%; */
+    font-weight: 600;
+    font-size: 0.8em;
+    /* line-height: 0em; */
+}
+.analytics-forecasting .forecasting-graphs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+.analytics-forecasting .forecasting-graphs h2{
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+/*  */
 
 /* Covid Impact Section */
 .impact-heading{
@@ -353,10 +394,31 @@ code, pre{
 }
 .economic-impact p{
     margin-top: 0px;
+    margin-bottom: 1em;
     padding: 0%;
     font-size: 1.25em;
     font-weight: bold;
 }
+.economic-impact .embedded-file{
+    width: 100%;
+    height: 100vh;
+}
+.policy-impact{
+    margin-bottom: 30px;
+}
+.policy-impact h3{
+    margin-bottom: 0px;
+    padding: 0%;
+    font-size: 1.75em;
+    font-weight: bold;
+}
+.policy-impact p{
+    margin-top: 0px;
+    padding: 0%;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
 .health-impact{
     margin-bottom: 30px;
 }
@@ -372,6 +434,7 @@ code, pre{
     font-size: 1.25em;
     font-weight: bold;
 }
+
 
 /* Data Sources Section */
 .data-sources-section{
@@ -756,21 +819,21 @@ footer .flex{
         }
 
         /* Analytics Page */
-        .analytics-main{
+        .analytics-forecasting{
         }
-        .analytics-main h1{
+        .analytics-forecasting h1{
             margin: 15px 0 5px 0px;
         }
-        .analytics-main p{
+        .analytics-forecasting p{
             margin: 5px 0;
         }
     
-        .analytics-main .card{
+        .analytics-forecasting .card{
             width: 100%;
             min-height: 30vh;
         }
     
-        .analytics-main .card img{
+        .analytics-forecasting .card img{
             width: 20%;
         }
 
@@ -1139,25 +1202,25 @@ footer .flex{
             font-weight: bold;
         }
         /* Analytics Page */
-        .analytics-main{
+        .analytics-forecasting{
             background-color: var(--body-bg);
         }
-        .analytics-main h1{
+        .analytics-forecasting h1{
             margin: 15px 0 0px 0px;
             font-size: 1.75em;
             font-weight: bold;
         }
-        .analytics-main p{
+        .analytics-forecasting p{
             margin: 10px 0 0px 0px;
             font-size: 1em;
             font-weight: bold;
         }
-        .analytics-main .card{
+        .analytics-forecasting .card{
             width: 100%;
             min-height: 20vh;
         }
 
-        .analytics-main .card img{
+        .analytics-forecasting .card img{
             width: 20%;
         }
 
