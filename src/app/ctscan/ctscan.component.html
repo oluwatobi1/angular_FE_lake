@@ -14,19 +14,20 @@
   <div class="row flex card">
 
     <div class="uploadSection-upload col-sm-12 col-md-6">
+      <div name="imageUpload" id="ctScanForm" class="card">
+        <div class="form-control">
+          <label for="name">(Optional) Img Identifier </label>
+          <input type="text" id="name" (change)="onTextchange($event)">
+          <input type="file" (change)="onImagechange($event)" name="Choose Image" class="">
+        </div>
+        <div class="progress" *ngIf="progress">
+          <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
+        </div>
+<!-- Input button -->
+        <input type="submit" value="Submit Image" class="btn btn-primary" name="submit" [disabled]="!image"
+          (click)="newImage()">
 
-      <div class="form-control">
-
-        <label for="name">(Optional) Img Identifier </label>
-        <input type="text" id="name" (change)="onTextchange($event)">
-        <input type="file" (change)="onImagechange($event)" name="Choose Image" class="">
       </div>
-      <div class="progress" *ngIf="progress">
-        <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
-      </div>
-
-      <input type="submit" value="Submit Image" class="btn btn-primary" name="submit" [disabled]="!image"
-        (click)="newImage()">
 
       <div *ngIf="message=='Upload Completed'" class="alert alert-success" role="alert">
         {{ message }}
@@ -36,7 +37,7 @@
       </div>
     </div>
 
-    <div *ngIf="imagearray.prediction==''" class= "uploadSection-preview col-sm-12 col-md-6">
+    <div *ngIf="imagearray.prediction==''" class="uploadSection-preview col-sm-12 col-md-6">
       <img src="https://via.placeholder.com/200x100/000000/FFFFFF/?text=upload image here" alt="placeholder"
         id="previewImage">
     </div>
@@ -95,8 +96,9 @@
 
 <!-- Scan Result Section -->
 <section class="wrapper ct-scan-result">
-  <h3 class="text-center">SCAN Result Analysis Section</h3>
+  <h2 class="text-center">SCAN Result Analysis Section</h2>
 
+  <!-- Dynamic out section -->
   <div class=" jumbotron row justify-content-md-center" *ngIf="imagearray.prediction!=''">
     <section class="wrapper ct-scan-result">
       <div class="row justify-content-md-center">
@@ -114,7 +116,7 @@
     </section>
 
   </div>
-
+  <!-- Dynamic section end -->
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maxime dolores tempora quam soluta id dolore commodi.
     Impedit eveniet quidem sit. Culpa architecto esse corrupti nemo aperiam provident tenetur deserunt.<br><br>
@@ -126,31 +128,8 @@
     Culpa reprehenderit quisquam dolorum consectetur voluptatibus molestiae modi rerum facere fugit itaque expedita
     impedit doloremque dolore adipisci vero corporis error, iure asperiores quidem. A distinctio soluta, asperiores quo
     fugiat ratione.<br><br>
-    Ratione magnam repudiandae ipsa, et iure neque blanditiis ea tempora odio delectus vel adipisci soluta nostrum
-    consequatur temporibus, consectetur optio voluptate. Est a beatae rerum doloremque nesciunt impedit, debitis
-    commodi!<br><br>
-    Repudiandae ab maiores facere libero eum neque quas atque harum doloremque enim animi suscipit exercitationem ipsum
-    omnis, porro autem corrupti error? Ullam commodi, ea mollitia suscipit dignissimos sequi excepturi placeat?<br><br>
-    Doloremque natus adipisci ea iste ipsum architecto modi molestias officiis optio porro animi est, omnis
-    reprehenderit dolorem sit accusamus magnam fugit at maxime quis? Veniam nam similique corporis quasi
-    laboriosam!<br><br>
-    Iusto nostrum nisi dicta voluptatibus ratione dolor explicabo, officia facilis minima eos laudantium saepe
-    veritatis? Vitae labore soluta debitis voluptate, unde laboriosam. Dolorum libero ex pariatur blanditiis nostrum
-    nemo vitae!<br><br>
-    Libero doloremque tempore facilis eveniet corrupti maxime amet odit molestiae, est inventore modi deserunt nulla
-    itaque ut natus quae animi accusamus et blanditiis eum. Quo facere laudantium ex fugiat aliquam?
     Dolores obcaecati voluptate qui incidunt mollitia repellat veniam! Porro quae nostrum, esse excepturi debitis eos
     reiciendis placeat, adipisci fugit ab similique! Molestiae deleniti iusto velit commodi ad, laudantium repellat.
     Numquam.<br><br>
-    Voluptatum laudantium omnis dolore tempora mollitia maxime illum quas earum. Blanditiis nihil sint nesciunt ipsam
-    hic, illo excepturi. Cum sunt amet commodi obcaecati eaque at? Possimus nisi in aperiam cumque.
-    Hic eligendi quis facilis quam id animi accusamus, provident aspernatur dolor saepe cumque qui atque quae nemo quo,
-    corrupti nesciunt explicabo? Delectus soluta repellendus quo temporibus minus sit pariatur ab.<br><br>
-    Reprehenderit officiis dicta ratione sunt corporis ad cupiditate voluptate consequuntur. Praesentium sint maiores
-    debitis numquam ea cumque dignissimos quod, enim quaerat ipsum. Fugiat, adipisci quae necessitatibus ab explicabo
-    cumque esse.<br><br>
-    Voluptatem cumque porro veniam, et pariatur tenetur? Exercitationem earum aspernatur dicta accusantium, eum
-    necessitatibus provident minus! Blanditiis laboriosam modi accusantium, unde deserunt recusandae, repudiandae a
-    architecto dolores iure nulla explicabo.
   </p>
 </section>
