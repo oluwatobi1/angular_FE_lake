@@ -19,7 +19,7 @@
 }
 
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: Cambria, 'Lato', sans-serif;
     color: #081f2c;
     background-color: white;
 }
@@ -35,13 +35,32 @@ a{
 a:hover{
     text-decoration: none;
 }
-h1, h2{
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 10px 0px;
+h1, h2, h3, h4, h5, h6{
+    margin: 0px 0px 0.5em 0em;
+    font-weight: 600;
+}
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 1.875em;
+}
+h3{
+    font-size: 1.75em;
+}
+h4{
+    font-size: 1.625em;
+}
+h5{
+    font-size: 1.5em;
+}
+h6{
+    font-size: 1.375;
 }
 p{
     margin: 10px 0px;
+    font-size: 1.125em;
+    font-weight: 450;
 }
 img{
     width: 100%;
@@ -76,6 +95,8 @@ img{
 .wrapper{
     padding: 0em 4em;
 }
+
+
 /* Navbar Stylings */
 .navbar{
     background-color: var(--primary-color) ;
@@ -105,7 +126,7 @@ img{
     color: var(--link-color);
     padding: 5px;
     margin: 0 5px;
-    font-weight: bold;
+    /* font-weight: bold; */
     /* border-bottom: 2px solid white; */
 }
 
@@ -160,13 +181,10 @@ img{
 .mainContent h1{
     font-size: 2rem;
     color: var(--link-color);
-    font-weight: bold;
 }
 .mainContent p{
     margin: 20px 0;
-    font-size: 1.25rem;
     color: var(--text-color);
-    font-weight: 600;
 }
 .mainContent a:hover{
     color: var(--link-color)
@@ -240,11 +258,10 @@ img{
     margin: 2em 0em;
 }
 .ct-scan-heading h1{
-    font-weight: bold;
+    margin-bottom: 0.5em;
 }
 .ct-scan-heading p{
-    /* line-height: 2em; */
-    font-size: 1.25em;
+    font-size: 1.125em;
 }
 .ct-scan-uploadSection{
     margin: 1em 0em 3em 0em;
@@ -301,10 +318,11 @@ img{
 }
 
 .ct-scan-result{
-    margin: 0em 0em 2em 0em;
+    margin: 0em 0em 3em 0em;
 }
-.ct-scan-result h3{
-    font-weight: bold;
+.ct-scan-result h2{
+    font-weight: 600;
+    font-size: 1.75em;
 }
 .ct-scan-result p{
     font-size: 1.25em;
@@ -365,7 +383,21 @@ img{
     font-weight: 600;
     margin-bottom: 0.5em;
 }
-/*  */
+/* Analytics - Covid Correlation  */
+.analytics-covid-correlation{
+    flex-direction: column;
+}
+
+/* Analytics - Intervention efficiency */
+.analytics-intervention-efficiency {
+    flex-direction: column;
+}
+
+/* Analytics - Infection and Death statistics */
+
+.analytics-infection-death-statistics{
+    flex-direction: column;
+}
 
 /* Covid Impact Section */
 .impact-heading{
@@ -505,15 +537,20 @@ img{
     display: flex;
     flex-direction: column;
 }
+.data-sources-section .card .card-body a{
+    display: flex;
+    flex-direction: column;
+}
 .data-sources-section .card-body .card-text{
     font-size: 1.25em;
     line-height: 1.25em;
     margin: 0.5em 0em;
     font-weight: bold;
+    color: var(--text-color);
 }
 .data-sources-section .card-body small{
     font-size: 1.125em;
-    text-align: right;
+    align-self: flex-end;
     font-weight: bold;
 }
 
@@ -1133,8 +1170,8 @@ footer .flex{
             margin: 1.5em 0em;
         }
         .ct-scan-heading p{
-            font-size: 1em;
-            font-weight: bold;
+            font-size: 1.125em;
+            /* font-weight: bold; */
         }
         .ct-scan-heading h1{
             font-size: 1.75em;
