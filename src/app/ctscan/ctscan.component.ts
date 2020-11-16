@@ -16,7 +16,8 @@ export class CtscanComponent implements OnInit {
   progress: number;
   message: string;
 
-  imagearray = { id: -1, name: '', image: File, prediction: '' };
+  imagearray = { id: -1, name: '', image: File, prediction: ''};
+  confidence;
 
   imgURL: any;
 
@@ -51,7 +52,6 @@ export class CtscanComponent implements OnInit {
     this.api.getImagedata().subscribe(
       data => {
         this.imagearray = data[0];
-
       },
       error => {
         console.log(error);
