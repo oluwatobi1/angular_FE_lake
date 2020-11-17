@@ -93,46 +93,50 @@
 
 <br>
 
+    <!-- Scan Result Section -->
+    <section class="wrapper ct-scan-result" *ngIf="imagearray.prediction!=''">
+      <h2 class="text-center">SCAN Result</h2>
+      
 
-<!-- Scan Result Section -->
-<section class="wrapper ct-scan-result">
-  <h2 class="text-center">SCAN Result Analysis Section</h2>
+      <div class="result-wrapper flex">
 
-  <!-- Dynamic out section -->
-  <div class=" jumbotron row justify-content-md-center" *ngIf="imagearray.prediction!=''">
-    <section class="wrapper ct-scan-result">
-      <div class="row justify-content-md-center">
-        <div class="col-md-auto">
-          <ol>
-            <li>
-              {{imagearray.name}}
-            </li><br>
-            <li>
-              <h3>Prediction is {{imagearray.prediction}}</h3>
-            </li>
-            <li>
-              <h3>Confidence of {{imagearray.prediction}}</h3>
-            </li>
-          </ol>
-        </div>
+          <div class="card flex">
+
+            <div class="card-heading">
+              <div class="source-title-div">
+                  <h5 class="card-title">Prediction</h5>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <p class="card-text" id="ctScanResult1">Prediction is {{imagearray.prediction}}</p>
+            </div>
+
+          </div>
+
+          <div class="card flex">
+
+            <div class="card-heading">
+              <div class="source-title-div">
+                  <h5 class="card-title">Confidence</h5>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <p class="card-text" id="ctScanResult2">Confidence of {{imagearray.prediction}}</p>
+
+            </div>
+
+          </div>
+
+
       </div>
-    </section>
 
-  </div>
-  <!-- Dynamic section end -->
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maxime dolores tempora quam soluta id dolore commodi.
-    Impedit eveniet quidem sit. Culpa architecto esse corrupti nemo aperiam provident tenetur deserunt.<br><br>
-    Saepe velit praesentium, nobis autem omnis blanditiis cupiditate ducimus dignissimos fugit provident, esse minima
-    ipsam. Ratione sit voluptate cupiditate, placeat rem exercitationem explicabo perspiciatis at ullam illum, tempore
-    unde tenetur!<br><br>
-    Placeat molestias natus reiciendis ex aperiam? Ut eaque est obcaecati dolorum, porro sapiente enim delectus illum
-    soluta quisquam vitae, quis officia maiores quo fugiat adipisci saepe eligendi ullam nulla aliquid.
-    Culpa reprehenderit quisquam dolorum consectetur voluptatibus molestiae modi rerum facere fugit itaque expedita
-    impedit doloremque dolore adipisci vero corporis error, iure asperiores quidem. A distinctio soluta, asperiores quo
-    fugiat ratione.<br><br>
-    Dolores obcaecati voluptate qui incidunt mollitia repellat veniam! Porro quae nostrum, esse excepturi debitis eos
-    reiciendis placeat, adipisci fugit ab similique! Molestiae deleniti iusto velit commodi ad, laudantium repellat.
-    Numquam.<br><br>
-  </p>
-</section>
+  </section>
+
+  <section class="ct-scan-result-analysis wrapper"> 
+    <h2 class="text-center">SCAN Result Analysis</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maxime dolores tempora quam soluta id dolore commodi. Impedit eveniet quidem sit. Culpa architecto esse corrupti nemo aperiam provident tenetur deserunt.<br><br>
+      Saepe velit praesentium, nobis autem omnis blanditiis cupiditate ducimus dignissimos fugit provident, esse minima ipsam. Ratione sit voluptate cupiditate, placeat rem exercitationem explicabo perspiciatis at ullam illum, tempore unde tenetur!<br><br>
+  </section>
