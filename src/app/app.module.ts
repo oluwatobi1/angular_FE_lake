@@ -22,6 +22,7 @@ import { AnalyticsCorrelationComponent } from './analytics-correlation/analytics
 import { AnalyticsStatisticsComponent } from './analytics-statistics/analytics-statistics.component';
 import { AnalyticsForecastingComponent } from './analytics-forecasting/analytics-forecasting.component';
 import { ImpactPolicyComponent } from './impact-policy/impact-policy.component';
+import { ProjectResultComponent } from './project-result/project-result.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ImpactPolicyComponent } from './impact-policy/impact-policy.component';
     AnalyticsCorrelationComponent,
     AnalyticsStatisticsComponent,
     AnalyticsForecastingComponent,
-    ImpactPolicyComponent
+    ImpactPolicyComponent,
+    ProjectResultComponent
   ],
   imports: [
     BrowserModule,
