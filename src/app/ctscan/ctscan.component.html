@@ -140,3 +140,30 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maxime dolores tempora quam soluta id dolore commodi. Impedit eveniet quidem sit. Culpa architecto esse corrupti nemo aperiam provident tenetur deserunt.<br><br>
       Saepe velit praesentium, nobis autem omnis blanditiis cupiditate ducimus dignissimos fugit provident, esse minima ipsam. Ratione sit voluptate cupiditate, placeat rem exercitationem explicabo perspiciatis at ullam illum, tempore unde tenetur!<br><br>
   </section>
+  
+  <section class=" wrapper ct-scan-summary">
+    <h2>Summary</h2>
+    <p>
+      First we prepare the data following below steps: </p>
+
+      <ol>
+        <li>Import COVID-19/Non_COVID-19 images files names into a train DataFrame with their labels. Then coping the last rows for testing DataFrame and delete them from the train df.
+</li>
+        <li>Shuffle training dfs, converting each to tensors and join all three train dfs into one big train df shape (3456, 256, 256, 3), and test (700)
+</li>
+        <li>Apply Data Augmentation (random rotation, shift, flip, zoom, shear transforms) on all three datasets images generating new 2000 images for generalizing the model as much as possible.
+</li>
+        <li>Join new images' dataset, after importing them to df and convert to tensors. the final training/testing dfs (5535, 256, 256, 3) ,and testing (1100, 256, 256, 3).
+</li>
+        <li>Import pretrained model “EfficientNetB6” from tensorflow.keras.applications and add our input shape (256,256,3), full connected layers (2048, 512,128) with ReLu as activation function, plus BatchNormalization with dropout (0.1 or 0.2) methods each. Finally, output layer for 2 classes with softmax as activation functions.
+</li>
+        <li> Train the data and save the weights for best max val_accurecy or min loss metrics.
+</li>
+        <li>Fine tune the model with extra very low learning rate for the optimization function.
+</li>
+        <li>Test the result and achieve high accuracy 91% on the testing 1100 images.
+</li>
+      </ol>
+
+  </section>
+
