@@ -9,6 +9,7 @@ import { CtscanComponent } from './ctscan/ctscan.component';
 import { DatasourceComponent } from './datasource/datasource.component';
 import { HomeComponent } from './home/home.component';
 import { ImpactPolicyComponent } from './impact-policy/impact-policy.component';
+import { ProjectResultComponent } from './project-result/project-result.component';
 import { ProjectoverviewComponent } from './projectoverview/projectoverview.component';
 import { TeamMembersComponent } from './team-members/team-members.component';
 
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: "Data-Sources", component:DatasourceComponent},
   {path: "Project-Overview", component:ProjectoverviewComponent},
   {path: "Team-Members", component:TeamMembersComponent}, 
-  {path: "Impact-Policy", component:ImpactPolicyComponent}
+  {path: "Impact-Policy", component:ImpactPolicyComponent},
+  {path: "Project-Result", component:ProjectResultComponent}
 ];
 
 @NgModule({
