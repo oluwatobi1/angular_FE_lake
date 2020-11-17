@@ -38,6 +38,7 @@ a:hover{
 h1, h2, h3, h4, h5, h6{
     margin: 0px 0px 0.5em 0em;
     font-weight: 600;
+    padding: 0em;
 }
 h1{
     font-size: 2em;
@@ -55,7 +56,7 @@ h5{
     font-size: 1.5em;
 }
 h6{
-    font-size: 1.375;
+    font-size: 1.375em;
 }
 p{
     margin: 10px 0px;
@@ -92,6 +93,9 @@ img{
 .embedded-file{
     width: 100%;
 }
+#navbarSupportedContent{
+    background-color: var(--primary-color);
+}
 .wrapper{
     padding: 0em 4em;
 }
@@ -104,7 +108,8 @@ img{
     padding-bottom: 10px;
     margin: 0%;
     width: 100%;
-    /* height: 10vh; */
+    /* position: fixed; */
+    /* z-index: 10000; */
 }
 
 .navbar .wrapper {
@@ -261,11 +266,10 @@ img{
     margin-bottom: 0.5em;
 }
 .ct-scan-heading p{
-    font-size: 1.125em;
+    padding: 0%;
 }
 .ct-scan-uploadSection{
     margin: 1em 0em 3em 0em;
-    /* background-color: whitesmoke; */
 }
 .ct-scan-uploadSection .flex{
     flex-direction: row;
@@ -307,7 +311,11 @@ img{
     line-height: 30px;
     color: white;
 }
-
+.ct-scan-uploadSection .uploadSection-upload .errorNotification {
+    color: red;
+    font-size: 1em;
+    display: none;
+}
 .ct-scan-uploadSection .uploadSection-preview{
     padding: 0%;
     margin: 0%;
@@ -321,11 +329,30 @@ img{
     margin: 0em 0em 3em 0em;
 }
 .ct-scan-result h2{
-    font-weight: 600;
-    font-size: 1.75em;
+    margin: 0%;
+    padding: 0%;
 }
 .ct-scan-result p{
-    font-size: 1.25em;
+    padding: 0%;
+}
+.ct-scan-result .result-wrapper{
+    margin: 0%;
+    padding: 0%;
+    justify-content: center;
+}
+.ct-scan-result .result-wrapper .card{
+    flex-direction: column;
+    margin: 1em;
+    width: 25%;
+}
+
+.ct-scan-result-analysis{
+    margin: 0em 0em 3em 0em;
+}
+.ct-scan-result-analysis h2{
+}
+.ct-scan-result-analysis p{
+    padding: 0%;
 }
 
 /* Analytics Page */
@@ -342,19 +369,23 @@ img{
     font-weight: bold;
     align-self: center;
 }
-
-.analytics-forecasting .forecasting-summary p{
+.analytics-forecasting h5{
     margin: 10px 0 0px 0px;
-    padding: 0%;
-    font-weight: 600;
-    font-size: 1.25em;
+    align-self: center;
+}
+
+.analytics-forecasting .forecasting-summary ul{
+    margin: 1.25em 0em 0em 0em;
     text-align: left;
+    align-self: flex-start;
+}
+.analytics-forecasting .forecasting-summary ul p{
+    font-size: 1.2em;
+    font-weight: 550;
 }
 .analytics-forecasting .forecasting-summary li{
-    margin: 0px 0 0px 1em;
-    /* padding-left: 1em; */
-    font-weight: 600;
-    font-size: 1em;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 .analytics-forecasting .forecasting-countries{
     margin-top: 2em;
@@ -362,15 +393,15 @@ img{
 .analytics-forecasting .forecasting-countries h5{
     margin: 0.75em 0em 0em 0em;
     padding: 0%;
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: 600;
     color: rgb(240, 173, 48);
 }
 .analytics-forecasting .forecasting-countries small{
     padding: 0em 0em 10em 0em;
     /* padding: 0%; */
-    font-weight: 600;
-    font-size: 0.8em;
+    font-weight: 550;
+    font-size: 0.9em;
     /* line-height: 0em; */
 }
 .analytics-forecasting .forecasting-graphs{
@@ -378,94 +409,209 @@ img{
     flex-direction: column;
     align-items: center;
     margin-top: 2em;
+    width: 100%;
 }
-.analytics-forecasting .forecasting-graphs h2{
-    font-weight: 600;
-    margin-bottom: 0.5em;
+.analytics-forecasting .forecasting-graphs h3{
+    margin: 1em 0em 0.5em 0em;
 }
+.analytics-forecasting .forecasting-graphs div{
+    display: flex;
+    margin: 1.25em 0em;
+    width: 100%;
+}
+
+
 /* Analytics - Covid Correlation  */
 .analytics-covid-correlation{
     flex-direction: column;
+    margin-bottom: 3em;
 }
+.analytics-covid-correlation h1{
+    margin: 0.5em 0em 1em 0em;
+}
+.analytics-covid-correlation h2{
+    margin: 0.5em 0em 0em 0em;
+}
+.analytics-covid-correlation h6{
+    margin: 0.5em 0em 0em 0em;
+}
+.analytics-covid-correlation ul{
+    margin: 1em 0em 1em 0em;
+}
+.analytics-covid-correlation ul li{
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: 500;
+}
+.analytics-covid-correlation div{
+    margin: 1em 0em 1em 0em;
+    width: 100%;
+}
+.analytics-covid-correlation div img{
+    margin: 0em;
+    padding: 0%;
+    width: 100%;
+}
+.analytics-covid-correlation h2{
+    align-self: flex-start;
+}
+
+
 
 /* Analytics - Intervention efficiency */
 .analytics-intervention-efficiency {
     flex-direction: column;
+    margin-bottom: 3em;
 }
+.analytics-intervention-efficiency h1{
+    margin: 1em 0em;
+}
+
+.analytics-intervention-efficiency h2{
+    margin: 0.5em 0em 0.5em;
+    text-align: center;
+}
+.analytics-intervention-efficiency .all-intervention{
+    margin-bottom: 1.5em;
+}
+.analytics-intervention-efficiency .all-intervention div{
+    padding: 0.5em;
+    width: 100%;
+}
+.analytics-intervention-efficiency h6{
+    margin: 1em 0em;
+}
+.analytics-intervention-efficiency .row{
+    margin: 0em 0em 1em 0em;
+}
+
+
 
 /* Analytics - Infection and Death statistics */
 
 .analytics-infection-death-statistics{
     flex-direction: column;
+    margin-bottom: 3em;
 }
+.analytics-infection-death-statistics h1{
+    margin-top: 0.75em;
+}
+.analytics-infection-death-statistics ul{
+    margin: 1.25em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.analytics-infection-death-statistics ul p{
+    font-size: 1.2em;
+    font-weight: 550;
+}
+.analytics-infection-death-statistics ul li{
+    font-size: 1.1em;
+    /* font-style: italic; */
+    font-weight: 500;
+}
+.analytics-infection-death-statistics div{
+    margin: 1em 0em 1em 0em;
+    width: 100%;
+}
+
+
 
 /* Covid Impact Section */
-.impact-heading{
-    margin-bottom: 30px;
+        #economic-health-page{
+            padding: 0%;
+            margin: 0%;
+            height: 100vh;
+        }
+        #economic-health-page .navbar{
+            height: 8.5vh;
+            position: relative;
+        }
+        #economic-health-page .impact-heading{
+            background-color: black;
+            color: white;
+            height: 5.5vh;
+            margin: 0%;
+            padding: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        .impact-heading h1{
+            margin: 0em 0em 0em 0em;
+            padding: 0%;
+            font-size: 1.5em;
+        }
+        #economic-health-page .economic-health-embedded-file-div{
+            height: 79vh;
+            margin: 0%;
+            padding: 0em;
+        }
+        #economic-health-page .economic-health-embedded-file{
+            height: 100%;
+            width: 100%;
+        }
+        #spinnerDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        #spinnerDiv img{
+            width: fit-content;
+        }
+        #economic-health-page .footer{
+            height: 7vh;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        
+
+/* Policy Impact */
+
+.policy-impact-analysis{
+    margin-bottom: 3em;
 }
-.impact-heading h1{
-    margin-bottom: 0px;
-    padding: 0%;
-    font-size: 2em;
-    font-weight: bold;
+.policy-impact-analysis h1{
+    margin: 1em 0em 0.75em 0em;
 }
-.impact-heading p{
-    margin-top: 0px;
-    padding: 0%;
-    font-size: 1.25em;
-    font-weight: bold;
-}
-.economic-impact{
-    margin-bottom: 30px;
-}
-.economic-impact h3{
-    margin-bottom: 0px;
-    padding: 0%;
-    font-size: 1.75em;
-    font-weight: bold;
-}
-.economic-impact p{
-    margin-top: 0px;
-    margin-bottom: 1em;
-    padding: 0%;
-    font-size: 1.25em;
-    font-weight: bold;
-}
-.economic-impact .embedded-file{
+.policy-impact-analysis div{
+    margin: 1em 0em;
     width: 100%;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
-.policy-impact{
-    margin-bottom: 30px;
+.policy-impact-analysis .taiwan-table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
 }
-.policy-impact h3{
+.policy-impact-analysis div img{
+    width: 75%;
+}
+.policy-impact-analysis div .smallImage{
+    width: 50%;
+}
+.policy-impact-analysis h6{
     margin-bottom: 0px;
-    padding: 0%;
-    font-size: 1.75em;
-    font-weight: bold;
+    text-align: left;
 }
-.policy-impact p{
-    margin-top: 0px;
+.policy-impact-analysis .policy-data-relationship{
+    flex-direction: column;
+}
+.policy-impact-analysis .policy-data-relationship div img{
+    width: 100%;
+}
+.policy-impact-analysis .policy-data-relationship h6{
+    align-self: center;
     padding: 0%;
-    font-size: 1.25em;
-    font-weight: bold;
+    margin: 0em 0em 1.25em 0em;
 }
 
-.health-impact{
-    margin-bottom: 30px;
-}
-.health-impact h3{
-    margin-bottom: 0px;
-    padding: 0%;
-    font-size: 1.75em;
-    font-weight: bold;
-}
-.health-impact p{
-    margin-top: 0px;
-    padding: 0%;
-    font-size: 1.25em;
-    font-weight: bold;
-}
+
 
 
 /* Data Sources Section */
@@ -475,10 +621,10 @@ img{
 .data-sources-section h1{
     font-size: 2em;
     font-weight: bold;
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 .data-sources-section .intro{
-    font-size: 1.25em;
+    font-size: 1.125em;
     margin-bottom: 1em;
     font-weight: bold;
 }
@@ -495,6 +641,7 @@ img{
     width: 100%;
     flex-direction: column;
     transition: 0.4s ease-in;
+    /* min-height: 25em; */
 }
 .data-sources-section .card-wrapper .card:hover{
     transform: scale(1.05);
@@ -504,6 +651,7 @@ img{
     padding: 0em;
     margin: 0%;
     width: 100%;
+    /* height: 50%; */
     display: flex;
 }
 
@@ -512,21 +660,24 @@ img{
     padding: 0%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 .data-sources-section .card-wrapper .icon-div img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* height: 100%; */
+    object-fit: contain;
 }
 .data-sources-section .card-wrapper .source-title-div{
     padding: 0%;
     margin: 0%;
     text-align: left;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 .data-sources-section .card .card-title{
-    font-size: 2em;
+    font-size: 1.75em;
     font-weight: bold;
     margin: 0.5em 0em 0em 0.5em;
 }
@@ -536,49 +687,99 @@ img{
     margin: 0%;
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
 }
+
 .data-sources-section .card .card-body a{
     display: flex;
     flex-direction: column;
+}
+.data-sources-section .card .card-body .card-text:hover{
+    /* text-decoration: underline; */
+    color: #007bff;
 }
 .data-sources-section .card-body .card-text{
     font-size: 1.25em;
     line-height: 1.25em;
     margin: 0.5em 0em;
-    font-weight: bold;
+    font-weight: 500;
     color: var(--text-color);
 }
 .data-sources-section .card-body small{
-    font-size: 1.125em;
+    font-size: 1em;
     align-self: flex-end;
     font-weight: bold;
 }
+.data-sources-section .smallfont .card-text{
+    font-size: 1.1em;
+    line-height: 0.85em;
+}
+
 
 /* Project Overview Section */
 .project-overview-content{
-    margin: 1.5em 0em;
+    margin: 1.5em 0em 4em 0em;
+
 }
 .project-overview-content h1{
-    font-size: 2em;
-    font-weight: bold;
 }
 .project-overview-content p{
     margin-bottom: 1em;
     font-size: 1.25em;
-    font-weight: bold;
+}
+.project-overview-content ol{
+    margin: 0em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.project-overview-content ol li{
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 2em;
+    padding-left: 1em;
+    font-weight: 550;
+}
+.project-overview-content ul{
+    margin: 0em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.project-overview-content ul li{
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 2em;
+    padding-left: 1em;
+    font-weight: 550;
+    list-style-type: square;
 }
 
+/* Project Result Page */
+.project-result{
+    margin-bottom: 2em;
+}
+.project-result h1{
+    margin-bottom: 0.5em;
+}
+.project-result p{
+    padding: 0%;
+}
 
 
 /* Team Members Section */
-.team-members-heading h1{
-    font-size: 2em;
-    font-weight: bold;
+.team-members-heading {
 }
-.card2{
+.team-members-heading h1{
+    margin-top: 1em;
+}
+#card2{
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 4em;
 }
+
+
+
 /* Footer */
 footer{
     background-color: var(--primary-color);
@@ -876,12 +1077,11 @@ footer .flex{
 
                /* Covid-Impact Section */
                .impact-heading{
-                margin-bottom: 30px;
+                margin: 0px;
+                padding: 0%;
             }
             .impact-heading h1{
-                margin-bottom: 0px;
-                padding: 0%;
-                font-size: 1.75em;
+            
             }
             .impact-heading p{
                 margin-top: 0px;
@@ -1018,6 +1218,10 @@ footer .flex{
     body{
         padding-top: 3.5em;
     }
+
+    .wrapper{
+        padding: 0em 0.5em;
+    }
     
    /* Navbar Stylings */
         .navbar{
@@ -1082,15 +1286,15 @@ footer .flex{
             background: rgba(0,0,0,0.8);
         }
         .mainContent h1{
-            font-size: 1.75rem;
             /* color: var(--link-color); */
-            font-weight: bold;
+            padding: 0%;
+            margin: 0%;
         }
         .mainContent p{
-            margin: 5px 0;
-            font-size: 1rem;
-            /* color: var(--text-color); */
-            font-weight: 600;
+            margin: 0.5em 0em 1em 0em;
+            font-weight: 400;
+            text-align: justify;
+            word-break: break-all;
         }
         .mainContent a:hover{
             color: var(--link-color)
@@ -1117,7 +1321,7 @@ footer .flex{
             margin: 0%;
         }
         .mainContent-ctScan #previewImage{
-            max-width: 90%;
+            max-width: 100%;
         }
         .mainContent-ctScan form{
             width: 100%;
@@ -1170,16 +1374,14 @@ footer .flex{
             margin: 1.5em 0em;
         }
         .ct-scan-heading p{
-            font-size: 1.125em;
-            /* font-weight: bold; */
+            padding: 0%;
         }
         .ct-scan-heading h1{
-            font-size: 1.75em;
-            font-weight: bold;
+            padding: 0%;
+            margin: 0%;
         }
         .ct-scan-uploadSection{
-            margin: 1em 0em 3em 0em;
-            /* background-color: whitesmoke; */
+            margin: 1em 0em 1.5em 0em;
         }
         .ct-scan-uploadSection .flex{
             flex-direction: row;
@@ -1231,92 +1433,289 @@ footer .flex{
             width: 100%;
             border-radius: 0px 0px 10px 10px;
         }
-        .ct-scan-result h3{
+        .ct-scan-result{
+            margin: 1.5em 0em 1.5em 0em;
+        }
+        .ct-scan-result h2{
+            padding: 0%;
             font-size: 1.5em;
         }
         .ct-scan-result p{
-            font-size: 1em;
-            font-weight: bold;
+            word-break: break-all;
         }
+
+
         /* Analytics Page */
+
+        /* Analytics - Covid Correlation  */
+        .analytics-covid-correlation{
+            margin-bottom: 1em;
+        }
+        .analytics-covid-correlation h1{
+            margin: 0.5em 0em 0.5em 0em;
+            font-size: 1.75em;
+        }
+        .analytics-covid-correlation h2{
+            margin: 0.25em 0em 0em 0em;
+        }
+        .analytics-covid-correlation h6{
+            margin: 0.25em 0em 0em 0em;
+            font-size: 1.125em;
+            text-align: center;
+        }
+        .analytics-covid-correlation ul{
+            margin: 0.5em 0em 0.5em 0em;
+        }
+        .analytics-covid-correlation ul li{
+            font-size: 1em;
+            font-weight: 500;
+        }
+        .analytics-covid-correlation div{
+            margin: 0.5em 0em 0.5em 0em;
+            width: 100%;
+        }
+        .analytics-covid-correlation div img{
+            margin: 0em;
+            padding: 0%;
+            width: 100%;
+        }
+        .analytics-covid-correlation h2{
+            align-self: flex-start;
+            font-size: 1.25em;
+        }
+
+
+/* Analytics - Intervention efficiency */
+        .analytics-intervention-efficiency {
+            flex-direction: column;
+            margin-bottom: 1em;
+        }
+        .analytics-intervention-efficiency h1{
+            margin: 0.5em 0em 0em 0em;
+            font-size: 1.725em;
+        }
+        .analytics-intervention-efficiency h3{
+            margin: 0.5em 0em 0em 0em;
+            font-size: 1.25em;
+        }
+        .analytics-intervention-efficiency h2{
+            margin: 0.5em 0em 0.5em;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 0%;
+        }
+        .analytics-intervention-efficiency .all-intervention{
+            margin-bottom: 1.5em;
+        }
+        .analytics-intervention-efficiency .all-intervention div{
+            padding: 0.5em;
+            width: 100%;
+        }
+        .analytics-intervention-efficiency h6{
+            margin: 1em 0em;
+            font-size: 1.125em;
+        }
+        .analytics-intervention-efficiency .row{
+            margin: 0em 0em 1em 0em;
+        }
+
+/* Analytics - Infection and Death statistics */
+
+        .analytics-infection-death-statistics{
+            margin-bottom: 1.5em;
+        }
+        .analytics-infection-death-statistics h1{
+            margin-top: 0.75em;
+            font-size: 1.5em;
+        }
+        .analytics-infection-death-statistics h5{
+            margin-top: 0.25em;
+            font-size: 1.325em;
+        }
+        .analytics-infection-death-statistics h6{
+            margin-top: 0.25em;
+            font-size: 1.125em;
+        }
+        .analytics-infection-death-statistics ul{
+            margin: 1.25em 0em 1.25em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .analytics-infection-death-statistics ul p{
+            font-size: 1.175em;
+            font-weight: 550;
+        }
+        .analytics-infection-death-statistics ul li{
+            font-size: 1.125em;
+            font-weight: 500;
+        }
+        .analytics-infection-death-statistics div{
+            margin: 1em 0em 1em 0em;
+            width: 100%;
+        }
+        
+
+/* Forecasting */
         .analytics-forecasting{
             background-color: var(--body-bg);
+            flex-direction: column;  
+            align-items: flex-start;
+            margin: 1em 0px 1em 0px;  
         }
         .analytics-forecasting h1{
-            margin: 15px 0 0px 0px;
-            font-size: 1.75em;
-            font-weight: bold;
+            margin: 5px 0 0px 0px;
+            font-size: 1.5em;
         }
-        .analytics-forecasting p{
-            margin: 10px 0 0px 0px;
+        .analytics-forecasting h5{
+            margin: 5px 0 0px 0px;
+            align-self: center;
+            font-size: 1.25em;
+        }
+
+        .analytics-forecasting .forecasting-summary ul{
+            margin: 1.25em 0em 0em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .analytics-forecasting .forecasting-summary ul p{
+            font-size: 1.1em;
+            font-weight: 550;
+        }
+        .analytics-forecasting .forecasting-summary li{
             font-size: 1em;
-            font-weight: bold;
+            font-weight: 500;
         }
-        .analytics-forecasting .card{
+        .analytics-forecasting .forecasting-countries{
+            margin-top: 2em;
+        }
+        .analytics-forecasting .forecasting-countries h5{
+            margin: 0.75em 0em 0em 0em;
+            padding: 0%;
+            font-size: 1em;
+            font-weight: 600;
+            color: rgb(240, 173, 48);
+        }
+        .analytics-forecasting .forecasting-countries small{
+            padding: 0em 0em 10em 0em;
+            /* padding: 0%; */
+            font-weight: 450;
+            font-size: 0.9em;
+            /* line-height: 0em; */
+        }
+        .analytics-forecasting .forecasting-graphs{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2em;
             width: 100%;
-            min-height: 20vh;
+        }
+        .analytics-forecasting .forecasting-graphs h3{
+            margin: 0em 0em 0.25em 0em;
+            font-size: 1.5em;
+        }
+        .analytics-forecasting .forecasting-graphs div{
+            display: flex;
+            margin: 1.25em 0em;
+            width: 100%;
         }
 
-        .analytics-forecasting .card img{
-            width: 20%;
-        }
 
-        /* Covid-Impact Section */
-        .impact-heading{
-            margin-bottom: 30px;
+/* Covid Impact Section */
+        #economic-health-page{
+            padding: 0%;
+            margin: 0%;
+            height: 100vh;
         }
+        #economic-health-page .navbar{
+            height: 8vh;
+            position: relative;
+        }
+        #economic-health-page .impact-heading{
+            background-color: black;
+            color: white;
+            height: 5vh;
+            margin: 0%;
+            padding: 0%;
+        } 
         .impact-heading h1{
-            margin-bottom: 0px;
-            padding: 0%;
-            font-size: 1.75em;
-        }
-        .impact-heading p{
-            margin-top: 0px;
-            padding: 0%;
-            font-size: 1em;
-            font-weight: bold;
-        }
-        .economic-impact{
-            margin-bottom: 30px;
-        }
-        .economic-impact h3{
-            margin-bottom: 0px;
+            margin: 0em 0em 0em 0em;
             padding: 0%;
             font-size: 1.5em;
         }
-        .economic-impact p{
-            margin-top: 0px;
-            padding: 0%;
-            font-size: 1em;
+        #economic-health-page .economic-health-embedded-file-div{
+            height: 80vh;
+            margin: 0%;
+            padding: 0em;
         }
-        .health-impact{
-            margin-bottom: 30px;
+        #economic-health-page .economic-health-embedded-file{
+            height: 100%;
+            width: 100%;
         }
-        .health-impact h3{
-            margin-bottom: 0px;
+        #economic-health-page .footer{
+            height: 7vh;
+            margin: 0%;
             padding: 0%;
-            font-size: 1.5em
-        }
-        .health-impact p{
-            margin-top: 0px;
-            padding: 0%;
-            font-size: 1em;
         }
 
 
-        /* Data Sources Section */
+
+        /* Policy Impact */
+
+        .policy-impact-analysis{
+            margin-bottom: 2em;
+        }
+        .policy-impact-analysis h1{
+            margin: 1em 0em 0.5em 0em;
+            font-size: 1.325em;
+        }
+        .policy-impact-analysis div{
+            margin: 1em 0em;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .policy-impact-analysis .taiwan-table{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.75em;
+        }
+        .policy-impact-analysis div img{
+            width: 100%;
+        }
+        .policy-impact-analysis div .smallImage{
+            width: 100%;
+        }
+        .policy-impact-analysis h6{
+            margin-bottom: 8px;
+            text-align: left;
+            font-size: 1.125em;
+        }
+        .policy-impact-analysis .policy-data-relationship{
+            flex-direction: column;
+        }
+        .policy-impact-analysis .policy-data-relationship div img{
+            width: 100%;
+        }
+        .policy-impact-analysis .policy-data-relationship h6{
+            align-self: center;
+            padding: 0%;
+            margin: 0em 0em 1.25em 0em;
+        }
+
+
+/* Data Sources Section */
         .data-sources-section{
             margin-bottom: 2em;
         }
         .data-sources-section h1{
             font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 0.75em;
+            margin-top: 0.5em;
         }
         .data-sources-section .intro{
             font-size: 1.125em;
-            margin: 0.5em 0em;
-            font-weight: bold;
+            margin-bottom: 1em;
+            font-weight: 450;
         }
         .data-sources-section .card-wrapper{
             padding: 0%;
@@ -1326,11 +1725,12 @@ footer .flex{
         }
 
         .data-sources-section .card-wrapper .card{
-            padding: 0.5em;
+            padding: 1em;
             margin: 0em;
             width: 100%;
             flex-direction: column;
             transition: 0.4s ease-in;
+            /* min-height: 25em; */
         }
         .data-sources-section .card-wrapper .card:hover{
             transform: scale(1.05);
@@ -1340,6 +1740,7 @@ footer .flex{
             padding: 0em;
             margin: 0%;
             width: 100%;
+            /* height: 50%; */
             display: flex;
         }
 
@@ -1348,22 +1749,26 @@ footer .flex{
             padding: 0%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
         }
         .data-sources-section .card-wrapper .icon-div img{
-            width: 90%;
-            object-fit: cover;
+            width: 100%;
+            /* height: 100%; */
+            object-fit: contain;
         }
         .data-sources-section .card-wrapper .source-title-div{
             padding: 0%;
             margin: 0%;
             text-align: left;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
         }
         .data-sources-section .card .card-title{
-            font-size: 1.25em;
+            font-size: 1.325em;
             font-weight: bold;
-            margin: 0em 0em 0em 0.25em;
+            margin: 0.5em 0em 0em 0.5em;
         }
         .data-sources-section .card .card-body{
             text-align: left;
@@ -1371,43 +1776,94 @@ footer .flex{
             margin: 0%;
             display: flex;
             flex-direction: column;
+            align-self: flex-start;
+            width: 100%;
+        }
+
+        .data-sources-section .card .card-body a{
+            display: flex;
+            flex-direction: column;
+        }
+        .data-sources-section .card .card-body .card-text:hover{
+            /* text-decoration: underline; */
+            color: #007bff;
         }
         .data-sources-section .card-body .card-text{
-            font-size: 1em;
-            line-height: 1.125em;
+            font-size: 1.125em;
+            line-height: 1.25em;
             margin: 0.5em 0em;
-            font-weight: 600;
+            font-weight: 500;
+            color: var(--text-color);
         }
         .data-sources-section .card-body small{
             font-size: 1em;
-            text-align: right;
+            align-self: flex-end;
             font-weight: bold;
         }
+        .data-sources-section .smallfont .card-text{
+            font-size: 0.9em;
+            line-height: 1em;
+        }
 
-        /* Project Overview Section */
+
+/* Project Overview Section */
         .project-overview-content{
-            margin: 1.5em 0em;
+            margin: 1.5em 0em 3em 0em;
+
         }
         .project-overview-content h1{
             font-size: 1.5em;
-            font-weight: bold;
         }
         .project-overview-content p{
             margin-bottom: 1em;
-            font-size: 1em;
+            text-align: justify;
+        }
+        .project-overview-content ol{
+            margin: 0em 0em 1.25em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .project-overview-content ol li{
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-left: 1em;
+            padding-left: 0.5em;
+            font-weight: 550;
+        }
+        .project-overview-content ul{
+            margin: 0em 0em 1.25em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .project-overview-content ul li{
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-left: 1em;
+            padding-left: 0.5em;
+            font-weight: 550;
+            list-style-type: square;
         }
 
-        /* Team Members Section */
-        .team-members-heading h1{
-            font-size: 1.5em;
-            font-weight: bold;
+
+/* Team Members Section */
+        .team-members-heading {
         }
+        .team-members-heading h1{
+            margin-top: 0.75em;
+            font-size: 1.5em;
+        }
+        #card2{
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 4em;
+        }
+
+
 
         /* Footer */
         footer{
             text-align: center;
             padding: 0.25em 0em;
-            /* height: 10vh; */
         }
         footer .social a{
             margin: 0 15px;
