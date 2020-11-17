@@ -355,6 +355,23 @@ img{
     padding: 0%;
 }
 
+.ct-scan-summary{
+    margin: 0em 0em 3em 0em;
+}
+.ct-scan-summary h2{
+}
+.ct-scan-summary p{
+    padding: 0%;
+}
+.ct-scan-summary ol{
+    margin: 0.5em 0em 0em 1em;
+}
+.ct-scan-summary ol li{
+    font-size: 1.125em;
+    padding-left: 0.5em;
+    font-style: italic;
+}
+
 /* Analytics Page */
 /* Forecasting */
 .analytics-forecasting{
