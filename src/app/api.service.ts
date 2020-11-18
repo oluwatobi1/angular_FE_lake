@@ -9,7 +9,7 @@ export class ApiService {
     // https://covidreisparbe.herokuapp.com/route/image/ to be replaced to connect to the BE
     // /route/image/ for local server
     // https://a1535d6b2db5.ngrok.io
-  url = "https://a1535d6b2db5.ngrok.io/route/image/"
+  url = "https://2c44f01053ce.ngrok.io/route/image/"
   
   httpHeaders = new HttpHeaders({'Content-Type':"application/json"})
 
