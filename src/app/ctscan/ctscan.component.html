@@ -1,11 +1,17 @@
-<!-- Page Heading -->
-<section class="wrapper ct-scan-heading">
-  <h1 class="text-center">CT-SCAN PAGE</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestiae ad alias neque repellendus atque nobis,
-    saepe excepturi cupiditate illo itaque perspiciatis vitae beatae esse dolorum aut, ipsum suscipit quo! <br><br>Lorem
-    ipsum dolor sit, amet consectetur adipisicing elit. Ab consequuntur inventore quia minima porro. Minima maiores nisi
-    officiis consequuntur culpa rem vero perferendis nulla, facilis praesentium perspiciatis nobis vel enim.</p>
-</section>
+    <!-- Page Heading -->
+    <section class="wrapper ct-scan-heading">
+      <h1 class="text-center">CT-SCAN</h1>
+      <p>Instructions:</p>
+      <ul>
+        <li>You can upload a chest ct scan image to be investigated by AI for COVID-19 detection.</li>
+        <li>Accepted image format is jpg, jpeg or png.</li>
+        <li>The AI will return a result 0 for COVID-19_negative or 1 for COVID-19_positive with a confidence percentile.</li>
+        <li>The current accuracy percentile for the AI is 91% so there is a possibility for 1 false out of 10 results depending on the ct-scan image quality and clarity. (All results can be correct)</li>
+      </ul>
+
+
+
+  </section>
 
 
 
@@ -16,8 +22,6 @@
     <div class="uploadSection-upload col-sm-12 col-md-6">
       <div name="imageUpload" id="ctScanForm" class="card">
         <div class="form-control">
-          <label for="name">(Optional) Img Identifier </label>
-          <input type="text" id="name" (change)="onTextchange($event)">
           <input type="file" (change)="onImagechange($event)" name="Choose Image" class="">
         </div>
         <div class="progress" *ngIf="progress">
@@ -48,123 +52,77 @@
 </section>
 
 
-<!-- fgd -->
-<!-- 
-  <div class="row justify-content-md-center">    
-    <div class="col-md-auto">
-      <label for="name">Image ID </label>
-      <input type="text" id="name" (change)="onTextchange($event)">      
-    </div>
-  </div> -->
-<!-- 
-  <div class="row justify-content-md-center">    
-    <div class="col-md-auto">
-      <input type="file" (change)="onImagechange($event)">
-    </div>
-  </div> -->
-<!-- 
-<br>
-  <div class="row justify-content-md-center">   
-    <div class="col-md-auto">
-      <button class="btn btn-primary" [disabled]="!image" (click)="newImage()"> Upload</button>
-    </div>
-  </div>
+<section class="wrapper ct-scan-result"  *ngIf="imagearray.prediction!=''">
+  <h2 class="text-center"></h2>
+  
 
-  <div class="progress" *ngIf="progress">
-    <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
-  </div> -->
-<!-- 
-  <br><br>
-  <div class="row justify-content-md-center">   
-    <div class="col-md-auto">
- 
-  <div *ngIf="message=='Upload Completed'" class="alert alert-success" role="alert">
-    {{ message }}
-  </div>
-  <div *ngIf="message=='Upload failed'" class="alert alert-danger" role="alert">
-    {{ message }}
-  </div>
-  </div>
-  </div> -->
+  <div class="result-wrapper flex">
 
-<!-- Out put section -->
+      <div class="card flex">
 
-
-
-<br>
-
-    <!-- Scan Result Section -->
-    <section class="wrapper ct-scan-result" *ngIf="imagearray.prediction!=''">
-      <h2 class="text-center">SCAN Result</h2>
-      
-
-      <div class="result-wrapper flex">
-
-          <div class="card flex">
-
-            <div class="card-heading">
-              <div class="source-title-div">
-                  <h5 class="card-title">Prediction</h5>
-              </div>
-            </div>
-            
-            <div class="card-body">
-              <p class="card-text" id="ctScanResult1">Prediction is 
-                {{prediction}}</p>
-            </div>
-
-          </div>
-
-          <div class="card flex">
-
-            <div class="card-heading">
-              <div class="source-title-div">
-                  <h5 class="card-title">Confidence</h5>
-              </div>
-            </div>
-            
-            <div class="card-body">
-              <p class="card-text" id="ctScanResult2">Confidence of {{confidence}}</p>
-
-            </div>
-
-          </div>
-
+        <div class="card-heading">
+              <h5 class="card-title">Scan Result</h5>
+        </div>
+        
+        <div class="card-body">
+          <p class="card-text" id="ctScanResult1">{{prediction}}</p>
+        </div>
 
       </div>
 
-  </section>
+      <div class="card flex">
 
-  <section class="ct-scan-result-analysis wrapper"> 
-    <h2 class="text-center">SCAN Result Analysis</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maxime dolores tempora quam soluta id dolore commodi. Impedit eveniet quidem sit. Culpa architecto esse corrupti nemo aperiam provident tenetur deserunt.<br><br>
-      Saepe velit praesentium, nobis autem omnis blanditiis cupiditate ducimus dignissimos fugit provident, esse minima ipsam. Ratione sit voluptate cupiditate, placeat rem exercitationem explicabo perspiciatis at ullam illum, tempore unde tenetur!<br><br>
-  </section>
-  
-  <section class=" wrapper ct-scan-summary">
-    <h2>Summary</h2>
-    <p>
-      First we prepare the data following below steps: </p>
+        <div class="card-heading">
+              <h5 class="card-title">Confidence Percentile</h5>
+        </div>
+        
+        <div class="card-body">
+          <p class="card-text" id="ctScanResult2">{{confidence}}</p>
+        </div>
 
-      <ol>
-        <li>Import COVID-19/Non_COVID-19 images files names into a train DataFrame with their labels. Then coping the last rows for testing DataFrame and delete them from the train df.
-</li>
-        <li>Shuffle training dfs, converting each to tensors and join all three train dfs into one big train df shape (3456, 256, 256, 3), and test (700)
-</li>
-        <li>Apply Data Augmentation (random rotation, shift, flip, zoom, shear transforms) on all three datasets images generating new 2000 images for generalizing the model as much as possible.
-</li>
-        <li>Join new images' dataset, after importing them to df and convert to tensors. the final training/testing dfs (5535, 256, 256, 3) ,and testing (1100, 256, 256, 3).
-</li>
-        <li>Import pretrained model “EfficientNetB6” from tensorflow.keras.applications and add our input shape (256,256,3), full connected layers (2048, 512,128) with ReLu as activation function, plus BatchNormalization with dropout (0.1 or 0.2) methods each. Finally, output layer for 2 classes with softmax as activation functions.
-</li>
-        <li> Train the data and save the weights for best max val_accurecy or min loss metrics.
-</li>
-        <li>Fine tune the model with extra very low learning rate for the optimization function.
-</li>
-        <li>Test the result and achieve high accuracy 91% on the testing 1100 images.
-</li>
-      </ol>
+      </div>
 
-  </section>
 
+  </div>
+
+</section>
+
+<section class="ct-scan-result-analysis wrapper"> 
+
+  <h2 class="text-center"></h2>
+  <p>Notes:</p>
+
+  <ol>
+    <li>COVID-19 Ct-Scan detector is in experiment phase to help fast detection of COVID-19 but the output result can't be considered yet as final confirmed result. Medical reference is the final trusted reference for result confirmation.</li>
+    <li>You are welcome to challenge the AI with other than ct scan images. but the expected result will probably be always 1, as an unrecognized image were the model is train and recognize
+  ct scan images only.</li>
+    <li>We appreciate your support and feedback of confirming the result to help us develop the AI.</li>
+  </ol>
+             
+</section>
+
+<section class=" wrapper ct-scan-summary">
+  <h2>Summary</h2>
+  <p>
+    First we prepare the data following below steps: </p>
+
+    <ol>
+      <li>Import COVID-19/Non_COVID-19 images files names into a train DataFrame with their labels. Then coping the last rows for testing DataFrame and delete them from the train df.
+</li>
+      <li>Shuffle training dfs, converting each to tensors and join all three train dfs into one big train df shape (3456, 256, 256, 3), and test (700)
+</li>
+      <li>Apply Data Augmentation (random rotation, shift, flip, zoom, shear transforms) on all three datasets images generating new 2000 images for generalizing the model as much as possible.
+</li>
+      <li>Join new images' dataset, after importing them to df and convert to tensors. the final training/testing dfs (5535, 256, 256, 3) ,and testing (1100, 256, 256, 3).
+</li>
+      <li>Import pretrained model “EfficientNetB6” from tensorflow.keras.applications and add our input shape (256,256,3), full connected layers (2048, 512,128) with ReLu as activation function, plus BatchNormalization with dropout (0.1 or 0.2) methods each. Finally, output layer for 2 classes with softmax as activation functions.
+</li>
+      <li> Train the data and save the weights for best max val_accurecy or min loss metrics.
+</li>
+      <li>Fine tune the model with extra very low learning rate for the optimization function.
+</li>
+      <li>Test the result and achieve high accuracy 91% on the testing 1100 images.
+</li>
+    </ol>
+
+</section>

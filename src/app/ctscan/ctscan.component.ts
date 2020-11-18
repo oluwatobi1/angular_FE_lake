@@ -27,9 +27,6 @@ export class CtscanComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onTextchange(event: any) {
-    this.name = event.target.value;
-  }
 
   onImagechange(event: any) {
     this.image = event.target.files[0];
