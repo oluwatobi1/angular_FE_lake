@@ -49,7 +49,7 @@ export class CtscanComponent implements OnInit {
       data => {
         this.imagearray = data[0];
         this.prediction = Math.round(parseInt(this.imagearray.prediction))
-        this.confidence = this.imagearray.prediction
+        this.confidence = Math.round(parseFloat(this.imagearray.prediction)*100)
       },
       error => {
         console.log(error);

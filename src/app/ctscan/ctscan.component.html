@@ -52,7 +52,7 @@
 </section>
 
 
-<section class="wrapper ct-scan-result"  *ngIf="imagearray.prediction!=''">
+<section class="wrapper ct-scan-result" *ngIf="imagearray.prediction!=''">
   <h2 class="text-center"></h2>
   
 
@@ -73,17 +73,38 @@
       <div class="card flex">
 
         <div class="card-heading">
-              <h5 class="card-title">Confidence Percentile</h5>
+              <h5 class="card-title">Confidence</h5>
         </div>
         
         <div class="card-body">
-          <p class="card-text" id="ctScanResult2">{{confidence}}</p>
+          <p class="card-text" id="ctScanResult2">{{confidence}}%</p>
         </div>
 
       </div>
-
-
   </div>
+  
+  <div class="result-wrapper flex">
+    <div class="card flex" *ngIf="prediction===0">
+      <div class="card-heading"  >
+            <h5 class="card-title">Scan Result</h5>
+      </div>      
+      <div class="card-body" >
+        <p class="card-text" id="ctScanResult1">Negative Covid</p>
+      </div>
+      <div class="card flex" *ngIf="prediction===1">
+        <div class="card-heading"  >
+              <h5 class="card-title">Scan Result</h5>
+        </div>      
+        <div class="card-body" >
+          <p class="card-text" id="ctScanResult1">Positive Covid</p>
+        </div>
+
+    </div>
+    </div>
+
+
+
+</div>
 
 </section>
 
