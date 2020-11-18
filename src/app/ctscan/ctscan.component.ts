@@ -17,7 +17,7 @@ export class CtscanComponent implements OnInit {
   message: string;
 
   imagearray = { id: -1, name: '', image: File, prediction: ''};
-  prediction; confidence;
+  prediction; confidence; check;conf;
   imgURL: any;
 
 
@@ -49,7 +49,9 @@ export class CtscanComponent implements OnInit {
       data => {
         this.imagearray = data[0];
         this.prediction = Math.round(parseFloat(this.imagearray.prediction))
-        this.confidence = Math.round(parseFloat(this.imagearray.prediction)*100)
+        this.conf = Math.round(parseFloat(this.imagearray.prediction)*100)
+        this.check= 100 - this.conf
+        this.confidence = Math.max(this.conf, this.check)
       },
       error => {
         console.log(error);
