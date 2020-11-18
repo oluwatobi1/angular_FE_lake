@@ -48,7 +48,7 @@ export class CtscanComponent implements OnInit {
     this.api.getImagedata().subscribe(
       data => {
         this.imagearray = data[0];
-        this.prediction = Math.round(parseInt(this.imagearray.prediction))
+        this.prediction = Math.round(parseFloat(this.imagearray.prediction))
         this.confidence = Math.round(parseFloat(this.imagearray.prediction)*100)
       },
       error => {
