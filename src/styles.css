@@ -554,7 +554,7 @@ img{
         #economic-health-page{
             padding: 0%;
             margin: 0%;
-            height: 100vh;
+            height: 82.5vh;
         }
         #economic-health-page .navbar{
             height: 8.5vh;
@@ -576,7 +576,7 @@ img{
             font-size: 1.5em;
         }
         #economic-health-page .economic-health-embedded-file-div{
-            height: 79vh;
+            height: 78vh;
             margin: 0%;
             padding: 0em;
             overflow-y: hidden;
