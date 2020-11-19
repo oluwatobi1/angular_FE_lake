@@ -4,7 +4,7 @@
 
 
 let embeddedDoc = document.querySelector('.economic-health-embedded-file')
-
+console.log(embeddedDoc)
 
 let displaySpinner=(()=>{
 
@@ -15,7 +15,7 @@ let displaySpinner=(()=>{
         
     let spinner = document.createElement('img');
         spinner.className = 'spinner'
-        spinner.src = './assets/images/Spin-2.9s-210px.gif'
+        spinner.src = '/assets/images/Spin-2.9s-210px.gif'
     
     let spinnerText = document.createElement('p')
         spinnerText.innerText = '... Dashboard Loading, Please Wait ...'
