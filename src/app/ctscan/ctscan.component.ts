@@ -66,6 +66,7 @@ export class CtscanComponent implements OnInit {
     this.progress = 1;
     uploadImage.append('name', this.name);
     uploadImage.append('image', this.image, this.image.name);
+    console.log(uploadImage['name'])
     this.api.postImage(uploadImage).pipe(
       map((event: any) => {
         if (event.type == HttpEventType.UploadProgress) {
